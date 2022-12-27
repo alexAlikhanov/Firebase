@@ -19,9 +19,19 @@ class Util {
                 complition()
             }
         }
-        
         alert.addAction(alertActionOk)
-        
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    func showAlertWithCancel(withTitile title: String, massage: String, viewController: UIViewController, complition: ( () -> Void)?) -> Void {
+        let alert = UIAlertController(title: title, message: massage, preferredStyle: .alert)
+        let alertActionOk = UIAlertAction(title: "Ok", style: .default) { action in
+            if let complition = complition {
+                complition()
+            }
+        }
+        let alertActionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(alertActionOk)
+        alert.addAction(alertActionCancel)
         viewController.present(alert, animated: true, completion: nil)
     }
 }
