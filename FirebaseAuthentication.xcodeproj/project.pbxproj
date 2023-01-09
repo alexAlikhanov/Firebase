@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F2922E1295995DC00E9ABD5 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2922E0295995DB00E9ABD5 /* Document.swift */; };
 		1F3121DB2955B5C1007B8BDD /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3121DA2955B5C1007B8BDD /* Util.swift */; };
 		1F6579DE295AF253008BA724 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6579DD295AF253008BA724 /* Task.swift */; };
 		1F6579E4295B1C64008BA724 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6579E3295B1C64008BA724 /* TaskCell.swift */; };
-		1F6579E7295B214C008BA724 /* CreateTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6579E6295B214C008BA724 /* CreateTaskController.swift */; };
-		1F6579E9295B21A1008BA724 /* CreateTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6579E8295B21A1008BA724 /* CreateTaskPresenter.swift */; };
+		1F77F651296C2E5600CD5791 /* DetailTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F77F650296C2E5600CD5791 /* DetailTaskPresenter.swift */; };
+		1F77F654296C2ED600CD5791 /* DetailTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F77F652296C2ED600CD5791 /* DetailTaskController.swift */; };
 		1FC46D2F2955D1A300B975EC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC46D2E2955D1A300B975EC /* APIManager.swift */; };
 		1FD995C72959A15D002ABBDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FD995C62959A15D002ABBDF /* GoogleService-Info.plist */; };
 		1FD995CA2959A3E3002ABBDF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1FD995C92959A3E3002ABBDF /* FirebaseAnalytics */; };
@@ -21,7 +20,6 @@
 		1FD995D02959A3E3002ABBDF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1FD995CF2959A3E3002ABBDF /* FirebaseFirestore */; };
 		1FD995D22959A3E3002ABBDF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1FD995D12959A3E3002ABBDF /* FirebaseStorage */; };
 		1FD995DA2959BA2A002ABBDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD995D82959BA2A002ABBDF /* ViewController.swift */; };
-		1FD995DD2959C72E002ABBDF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD995DC2959C72E002ABBDF /* User.swift */; };
 		1FD995E82959D1E1002ABBDF /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD995E72959D1E1002ABBDF /* UserDefaultsManager.swift */; };
 		1FD995EE2959D299002ABBDF /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD995EC2959D298002ABBDF /* RouterProtocol.swift */; };
 		1FD995EF2959D299002ABBDF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD995ED2959D298002ABBDF /* Router.swift */; };
@@ -42,23 +40,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F2922E0295995DB00E9ABD5 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Document.swift; path = "../../../New Group/Document.swift"; sourceTree = "<group>"; };
 		1F3121DA2955B5C1007B8BDD /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		1F6579DD295AF253008BA724 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1F6579E3295B1C64008BA724 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
-		1F6579E6295B214C008BA724 /* CreateTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskController.swift; sourceTree = "<group>"; };
-		1F6579E8295B21A1008BA724 /* CreateTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTaskPresenter.swift; sourceTree = "<group>"; };
+		1F77F650296C2E5600CD5791 /* DetailTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskPresenter.swift; sourceTree = "<group>"; };
+		1F77F652296C2ED600CD5791 /* DetailTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskController.swift; sourceTree = "<group>"; };
 		1FC46D2E2955D1A300B975EC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1FD995C62959A15D002ABBDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FD995D82959BA2A002ABBDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1FD995DC2959C72E002ABBDF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1FD995E72959D1E1002ABBDF /* UserDefaultsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		1FD995EC2959D298002ABBDF /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		1FD995ED2959D298002ABBDF /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		1FD995F22959D2E3002ABBDF /* AssemblyModuleBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssemblyModuleBuilder.swift; sourceTree = "<group>"; };
 		1FD995F82959D42E002ABBDF /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
-		1FD995FF2959DD94002ABBDF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Login.swift; path = LoginModule/Login.swift; sourceTree = "<group>"; };
-		1FD996002959DD94002ABBDF /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Login.xib; path = LoginModule/Login.xib; sourceTree = "<group>"; };
+		1FD995FF2959DD94002ABBDF /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		1FD996002959DD94002ABBDF /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		1FD996052959DF16002ABBDF /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		1FD996072959EC7A002ABBDF /* MainViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 		1FD996082959EC7A002ABBDF /* MainViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController2.xib; sourceTree = "<group>"; };
@@ -89,117 +85,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F6579E5295B2078008BA724 /* CreateTaskModule */ = {
-			isa = PBXGroup;
-			children = (
-				1F6579E8295B21A1008BA724 /* CreateTaskPresenter.swift */,
-				1F6579E6295B214C008BA724 /* CreateTaskController.swift */,
-			);
-			name = CreateTaskModule;
-			path = routers/CreateTaskModule;
-			sourceTree = "<group>";
-		};
-		1FD995D32959A696002ABBDF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				1F2922E0295995DB00E9ABD5 /* Document.swift */,
-				1FD995DC2959C72E002ABBDF /* User.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		1FD995D52959A6C6002ABBDF /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				1F3121DA2955B5C1007B8BDD /* Util.swift */,
-				1FC46D2E2955D1A300B975EC /* APIManager.swift */,
-				1FD995E72959D1E1002ABBDF /* UserDefaultsManager.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		1FD995DE2959CFE0002ABBDF /* MainModule */ = {
-			isa = PBXGroup;
-			children = (
-				1FD995E12959D028002ABBDF /* Presenter */,
-				1FD995E02959D017002ABBDF /* View */,
-				1FD995DF2959D00D002ABBDF /* Model */,
-			);
-			path = MainModule;
-			sourceTree = "<group>";
-		};
-		1FD995DF2959D00D002ABBDF /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				1F6579DD295AF253008BA724 /* Task.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1FD995E02959D017002ABBDF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				1FD996072959EC7A002ABBDF /* MainViewController2.swift */,
-				1FD996082959EC7A002ABBDF /* MainViewController2.xib */,
-				1F6579E3295B1C64008BA724 /* TaskCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		1FD995E12959D028002ABBDF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				1FD995F82959D42E002ABBDF /* MainPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		1FD995F02959D2A0002ABBDF /* routers */ = {
+		1F77F64A296C083100CD5791 /* Router */ = {
 			isa = PBXGroup;
 			children = (
 				1FD995EC2959D298002ABBDF /* RouterProtocol.swift */,
 				1FD995ED2959D298002ABBDF /* Router.swift */,
 			);
-			path = routers;
+			path = Router;
 			sourceTree = "<group>";
 		};
-		1FD995F52959D2EC002ABBDF /* AssemblyBuilder */ = {
+		1F77F64B296C085D00CD5791 /* Assembly */ = {
 			isa = PBXGroup;
 			children = (
 				1FD995F22959D2E3002ABBDF /* AssemblyModuleBuilder.swift */,
 			);
-			name = AssemblyBuilder;
+			path = Assembly;
 			sourceTree = "<group>";
 		};
-		1FD995FA2959DD27002ABBDF /* LoginModule */ = {
+		1F77F64C296C088900CD5791 /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				1FD996042959DE77002ABBDF /* Presenter */,
-				1FD995D32959A696002ABBDF /* Models */,
-				1FD996032959DE65002ABBDF /* View */,
+				1FD995F82959D42E002ABBDF /* MainPresenter.swift */,
+				1FD996072959EC7A002ABBDF /* MainViewController2.swift */,
+				1FD996082959EC7A002ABBDF /* MainViewController2.xib */,
+				1F6579E3295B1C64008BA724 /* TaskCell.swift */,
+				1F6579DD295AF253008BA724 /* Task.swift */,
 			);
-			name = LoginModule;
-			path = View/LoginModule;
+			path = MainModule;
 			sourceTree = "<group>";
 		};
-		1FD996032959DE65002ABBDF /* View */ = {
+		1F77F64D296C08FD00CD5791 /* LoginModule */ = {
 			isa = PBXGroup;
 			children = (
+				1FD996052959DF16002ABBDF /* LoginPresenter.swift */,
 				1FD995FF2959DD94002ABBDF /* Login.swift */,
 				1FD996002959DD94002ABBDF /* Login.xib */,
 				1FD9960B2959EFA7002ABBDF /* SignIn.swift */,
 				1FD9960C2959EFA7002ABBDF /* SignIn.xib */,
 			);
-			name = View;
+			path = LoginModule;
 			sourceTree = "<group>";
 		};
-		1FD996042959DE77002ABBDF /* Presenter */ = {
+		1F77F64E296C092C00CD5791 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				1FD996052959DF16002ABBDF /* LoginPresenter.swift */,
+				1FC46D2E2955D1A300B975EC /* APIManager.swift */,
+				1FD995E72959D1E1002ABBDF /* UserDefaultsManager.swift */,
+				1F3121DA2955B5C1007B8BDD /* Util.swift */,
 			);
-			name = Presenter;
-			path = LoginModule;
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1F77F64F296C2E2100CD5791 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				1F77F650296C2E5600CD5791 /* DetailTaskPresenter.swift */,
+				1F77F652296C2ED600CD5791 /* DetailTaskController.swift */,
+			);
+			path = DetailModule;
 			sourceTree = "<group>";
 		};
 		1FDDDE3C29559934003821EF = {
@@ -223,12 +166,12 @@
 			children = (
 				1FDDDE4A29559934003821EF /* SceneDelegate.swift */,
 				1FDDDE4829559934003821EF /* AppDelegate.swift */,
-				1FD995F52959D2EC002ABBDF /* AssemblyBuilder */,
-				1FD995F02959D2A0002ABBDF /* routers */,
-				1F6579E5295B2078008BA724 /* CreateTaskModule */,
-				1FD995DE2959CFE0002ABBDF /* MainModule */,
-				1FD995FA2959DD27002ABBDF /* LoginModule */,
-				1FD995D52959A6C6002ABBDF /* Service */,
+				1F77F64F296C2E2100CD5791 /* DetailModule */,
+				1F77F64E296C092C00CD5791 /* Service */,
+				1F77F64D296C08FD00CD5791 /* LoginModule */,
+				1F77F64C296C088900CD5791 /* MainModule */,
+				1F77F64B296C085D00CD5791 /* Assembly */,
+				1F77F64A296C083100CD5791 /* Router */,
 				1FDDDE4E29559934003821EF /* Main.storyboard */,
 				1FD995D82959BA2A002ABBDF /* ViewController.swift */,
 				1FDDDE5129559938003821EF /* Assets.xcassets */,
@@ -329,15 +272,13 @@
 				1F6579E4295B1C64008BA724 /* TaskCell.swift in Sources */,
 				1FD995F42959D2E3002ABBDF /* AssemblyModuleBuilder.swift in Sources */,
 				1FD9960D2959EFA7002ABBDF /* SignIn.swift in Sources */,
-				1F6579E9295B21A1008BA724 /* CreateTaskPresenter.swift in Sources */,
+				1F77F654296C2ED600CD5791 /* DetailTaskController.swift in Sources */,
 				1FD996062959DF16002ABBDF /* LoginPresenter.swift in Sources */,
 				1FDDDE4929559934003821EF /* AppDelegate.swift in Sources */,
 				1FD996092959EC7A002ABBDF /* MainViewController2.swift in Sources */,
 				1F3121DB2955B5C1007B8BDD /* Util.swift in Sources */,
-				1FD995DD2959C72E002ABBDF /* User.swift in Sources */,
 				1FD995EE2959D299002ABBDF /* RouterProtocol.swift in Sources */,
-				1F6579E7295B214C008BA724 /* CreateTaskController.swift in Sources */,
-				1F2922E1295995DC00E9ABD5 /* Document.swift in Sources */,
+				1F77F651296C2E5600CD5791 /* DetailTaskPresenter.swift in Sources */,
 				1FD996012959DD94002ABBDF /* Login.swift in Sources */,
 				1FD995F92959D42E002ABBDF /* MainPresenter.swift in Sources */,
 				1FD995EF2959D299002ABBDF /* Router.swift in Sources */,

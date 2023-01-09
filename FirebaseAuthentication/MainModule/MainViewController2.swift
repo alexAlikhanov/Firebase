@@ -62,7 +62,7 @@ class MainViewController2: UIViewController {
     }
     @objc
     func editBarButtonAction(sender: UIBarButtonItem){
-        
+        taskTableView.isEditing = !taskTableView.isEditing
     }
     @objc
     func logoutBarButtonAction(sender: UIBarButtonItem){
@@ -86,6 +86,24 @@ extension MainViewController2: UITableViewDataSource, UITableViewDelegate {
         cell.accessoryType  = .disclosureIndicator
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if tableView.isEditing == true {
+            return true
+        } else {
+            return false
+        }
+    }
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            presenter?.deleteTask(for: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.showDetail(forTask: (presenter?.tasks?[indexPath.row])!)
+    }
     
 }

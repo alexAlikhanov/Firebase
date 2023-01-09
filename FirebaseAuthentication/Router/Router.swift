@@ -28,6 +28,7 @@ class Router: RouterProtocol {
             if let navigationController = navigationController {
                 guard let mainViewController = assemblyBuilder?.createMainModule(router: self, APIManager: APIManager) else {return}
                 navigationController.viewControllers = [mainViewController]
+                APIManager.UID = userDefaultManager?.getUser()
             }
         } else {
             if let navigationController = navigationController {
@@ -46,13 +47,6 @@ class Router: RouterProtocol {
         }
     }
     
-    func presentCreateTask() {
-        if let navigationController = navigationController {
-            guard let ViewController = assemblyBuilder?.createTaskModule(router: self, APIManager: APIManager) else { return }
-            ViewController.modalPresentationStyle = .automatic
-            navigationController.pushViewController(ViewController, animated: true)
-        }
-    }
 
     func dismiss(complition: (() -> Void)?) {
         if let navigationController = navigationController {
@@ -62,6 +56,14 @@ class Router: RouterProtocol {
     func popToRoot() {
         if let navigationController = navigationController {
             navigationController.popToRootViewController(animated: true)
+        }
+    }
+    
+    func presentDetailFor(task: Task) {
+        if let navigationController = navigationController {
+            guard let VC = assemblyBuilder?.createDetailModule(router: self, task: task) else { return }
+            VC.modalPresentationStyle = .automatic
+            navigationController.pushViewController(VC, animated: true)
         }
     }
 

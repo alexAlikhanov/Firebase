@@ -8,6 +8,8 @@
 import Foundation
 
 struct Task {
+    var id: String
     var title: String
     var subtitle: String
+    var body: String
 }

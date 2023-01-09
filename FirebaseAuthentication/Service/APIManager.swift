@@ -12,20 +12,23 @@ import FirebaseAuth
 import FirebaseCoreInternal
 
 protocol APIManagerProtocol{
+    var UID: String? { get set }
     func configureFB() -> Firestore
-    func getTasks(forUser uid: String, document: String, complition: @escaping ([Task]?) -> Void)
-    func createTask(forUser uid: String, task: Task, complition: @escaping (Result<String?, Error>) -> Void)
-    func createUser(uid: String, userName: String, email: String, complition: @escaping () -> Void)
+    func getTasks(document: String, complition: @escaping ([Task]?) -> Void)
+    func createTask(task: Task, complition: @escaping (Result<String?, Error>) -> Void)
+    func createUser(userName: String, email: String, complition: @escaping () -> Void)
     func setPost(collection: String, document: String, complition: @escaping () -> Void)
     func login(withEmail email: String, password: String, complition: @escaping (Result<String?, Error>) -> Void)
     func signIn(withEmail email: String, password: String, userName: String, complition: @escaping (Result<String?, Error>) -> Void)
     func logOut()
+    func removeTask(documentId: String, complition: @escaping (Bool) -> Void)
 }
 
 class APIManager : APIManagerProtocol {
     
     static let shared = APIManager()
     var currentUser: AuthDataResult!
+    public var UID: String?
     
     func configureFB() -> Firestore {
         var db: Firestore!
@@ -42,6 +45,7 @@ class APIManager : APIManagerProtocol {
                 complition(.failure(error!))
             } else {
                 APIManager.shared.currentUser = result
+                self.UID = result?.user.uid
                 complition(.success(result?.user.uid))
                 }
             }
@@ -53,7 +57,7 @@ class APIManager : APIManagerProtocol {
                 complition(.failure(error!))
             } else {
                 guard let result = resault else { return }
-                self.createUser(uid: result.user.uid, userName: userName, email: email) {
+                self.createUser(userName: userName, email: email) {
                         complition(.success(result.user.uid))
                     }
                 }
@@ -64,17 +68,17 @@ class APIManager : APIManagerProtocol {
         
     }
     
-    func getTasks(forUser uid: String, document: String, complition: @escaping ([Task]?) -> Void){
+    func getTasks(document: String, complition: @escaping ([Task]?) -> Void){
         let db = configureFB()
         var retTasks: [Task] = []
-        db.collection("Users").document(uid).collection("Tasks").getDocuments { data, error in
+        db.collection("Users").document(self.UID!).collection("Tasks").getDocuments { data, error in
             
             if error != nil {
                 complition(nil)
             } else {
                 guard let tasks = data?.documents else { complition(nil); return }
                 for task in tasks {
-                    let t = Task(title: task.get("title") as! String, subtitle: task.get("subtitle") as! String)
+                    let t = Task(id: task.documentID, title: task.get("title") as! String, subtitle: task.get("subtitle") as! String, body: task.get("body") as! String)
                     retTasks.append(t)
                 }
                 complition(retTasks)
@@ -82,10 +86,10 @@ class APIManager : APIManagerProtocol {
         }
     }
     
-    func createTask(forUser uid: String, task: Task, complition: @escaping (Result<String?, Error>) -> Void) {
+    func createTask(task: Task, complition: @escaping (Result<String?, Error>) -> Void) {
         let db = configureFB()
         var ref : DocumentReference? = nil
-        ref = db.collection("Users").document(uid).collection("Tasks").addDocument(data: ["title":task.title, "subtitle":task.subtitle]) { error in
+        ref = db.collection("Users").document(self.UID!).collection("Tasks").addDocument(data: ["title":task.title, "subtitle":task.subtitle, "body": task.body]) { error in
             if error != nil {
                 complition(.failure(error!))
             } else {
@@ -94,9 +98,9 @@ class APIManager : APIManagerProtocol {
         }
     }
     
-    func createUser(uid: String, userName: String, email: String, complition: @escaping () -> Void){
+    func createUser(userName: String, email: String, complition: @escaping () -> Void){
         let db = configureFB()
-        db.collection("Users").document(uid).setData([
+        db.collection("Users").document(self.UID!).setData([
             "userName": userName,
             "email": email
         ]) { error in
@@ -117,6 +121,17 @@ class APIManager : APIManagerProtocol {
             } else {
                 print("Document added with ID: \(ref!.documentID)")
                 complition()
+            }
+        }
+    }
+    
+    func removeTask(documentId: String, complition: @escaping (Bool) -> Void) {
+        let db = configureFB()
+        db.collection("Users").document(self.UID!).collection("Tasks").document(documentId).delete { error in
+            if error != nil {
+                complition(false)
+            } else {
+                complition(true)
             }
         }
     }

@@ -7,23 +7,40 @@
 
 import UIKit
 
-class DetailTaskController: UIViewController {
-
+protocol DetailTaskProtocol: AnyObject {
+    var presenter: DetailTaskPresenterProtocol? { get set }
+    func setup(task: Task)
+}
+class DetailTaskController: UIViewController, DetailTaskProtocol {
+    public var presenter: DetailTaskPresenterProtocol?
+    private let textView: UITextView = {
+        let textView = UITextView()
+        textView.isEditable = true
+        textView.translatesAutoresizingMaskIntoConstraints = false
+        return textView
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        view.addSubview(textView)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        createConstraints()
+    }
+    
+    private func createConstraints() {
+        NSLayoutConstraint.activate([
+            textView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            textView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            textView.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor),
+            textView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)
+        ])
+    }
+    
+    func setup(task: Task) {
+        navigationItem.title = task.title
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

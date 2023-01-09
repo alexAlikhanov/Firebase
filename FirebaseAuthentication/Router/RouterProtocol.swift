@@ -18,7 +18,7 @@ protocol RouterProtocol: RouterMain {
     init(navigationController: UINavigationController, assemblyBuilder: AssemblyModuleBuilderProtocol, APIManager: APIManagerProtocol, userDefaultManager: UserDefaultsManagerProtocol)
     func initialViewController()
     func presentSignIn()
-    func presentCreateTask()
+    func presentDetailFor(task: Task)
     func popToRoot()
     func dismiss(complition: (()->Void)?)
-}
+} 

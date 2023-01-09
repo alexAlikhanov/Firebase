@@ -12,7 +12,7 @@ protocol AssemblyModuleBuilderProtocol{
     func createMainModule(router: RouterProtocol, APIManager: APIManagerProtocol) -> UIViewController
     func createLoginModule(router: RouterProtocol, APIManager: APIManagerProtocol) -> UIViewController
     func createSignInModule(router: RouterProtocol, APIManager: APIManagerProtocol) -> UIViewController
-    func createTaskModule(router: RouterProtocol, APIManager: APIManagerProtocol) -> UIViewController
+    func createDetailModule(router: RouterProtocol, task: Task) -> UIViewController
 }
 
 
@@ -41,12 +41,11 @@ class AssemblyModuleBuilder: AssemblyModuleBuilderProtocol {
         return view
     }
     
-    func createTaskModule(router: RouterProtocol, APIManager: APIManagerProtocol) -> UIViewController {
-        let view = CreateTaskController()
-        let userDefaultsManager = UserDefaultsManager.shared
-        let presenter = CreateTaskPresenter(view: view, router: router, APIManager: APIManager, userDefaultsManager: userDefaultsManager)
+    func createDetailModule(router: RouterProtocol, task: Task) -> UIViewController {
+        let view = DetailTaskController()
+        let presenter = DetailTaskPresenter(view: view, router: router)
         view.presenter = presenter
+        view.setup(task: task)
         return view
     }
-
 }
