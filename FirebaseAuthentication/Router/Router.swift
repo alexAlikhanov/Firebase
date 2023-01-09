@@ -9,35 +9,54 @@ import Foundation
 import UIKit
 
 class Router: RouterProtocol {
-
+    
+    var userDefaultManager: UserDefaultsManagerProtocol?
+    var APIManager: APIManagerProtocol!
     var navigationController: UINavigationController?
     var assemblyBuilder: AssemblyModuleBuilderProtocol?
 
-    required init(navigationController: UINavigationController, assemblyBuilder: AssemblyModuleBuilderProtocol, networkService: NetworkServiceProtocol, player: AVPlayerProtocol){
+    required init(navigationController: UINavigationController, assemblyBuilder: AssemblyModuleBuilderProtocol, APIManager: APIManagerProtocol, userDefaultManager: UserDefaultsManagerProtocol) {
+        self.APIManager = APIManager
         self.navigationController = navigationController
         self.assemblyBuilder = assemblyBuilder
-        self.networkService = networkService
-        self.player = player
+        self.userDefaultManager = userDefaultManager
     }
+
     
     func initialViewController() {
-        if let navigationController = navigationController {
-            guard let mainViewController = assemblyBuilder?.createMainModule(router: self, networkService: self.networkService, player: self.player) else { return }
-            navigationController.viewControllers = [mainViewController]
+        if userDefaultManager?.getUser() != nil {
+            if let navigationController = navigationController {
+                guard let mainViewController = assemblyBuilder?.createMainModule(router: self, APIManager: APIManager) else {return}
+                navigationController.viewControllers = [mainViewController]
+            }
+        } else {
+            if let navigationController = navigationController {
+                guard let mainViewController = assemblyBuilder?.createLoginModule(router: self, APIManager: APIManager) else {return}
+                navigationController.viewControllers = [mainViewController]
+            }
         }
     }
     
-    func presentMusicPlauer(data: MusicData?) {
+    func presentSignIn() {
         if let navigationController = navigationController {
-            guard let ViewController = assemblyBuilder?.createPlayerModule(router: self, data: data, networkService: self.networkService, player: self.player) else { return }
+            guard let ViewController = assemblyBuilder?.createSignInModule(router: self, APIManager: APIManager) else { return }
             
-            ViewController.modalPresentationStyle = .currentContext
+            ViewController.modalPresentationStyle = .formSheet
             navigationController.present(ViewController, animated: true)
         }
     }
-    func dismissMusicPlayer() {
+    
+    func presentCreateTask() {
         if let navigationController = navigationController {
-            navigationController.dismiss(animated: true, completion: nil)
+            guard let ViewController = assemblyBuilder?.createTaskModule(router: self, APIManager: APIManager) else { return }
+            ViewController.modalPresentationStyle = .automatic
+            navigationController.pushViewController(ViewController, animated: true)
+        }
+    }
+
+    func dismiss(complition: (() -> Void)?) {
+        if let navigationController = navigationController {
+            navigationController.dismiss(animated: true, completion: complition)
         }
     }
     func popToRoot() {

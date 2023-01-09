@@ -10,12 +10,15 @@ import UIKit
 protocol RouterMain{
     var navigationController: UINavigationController? { get set }
     var assemblyBuilder: AssemblyModuleBuilderProtocol?  { get set }
+    var APIManager: APIManagerProtocol! { get set }
+    var userDefaultManager: UserDefaultsManagerProtocol? { get set }
 }
 
 protocol RouterProtocol: RouterMain {
-    init(navigationController: UINavigationController, assemblyBuilder: AssemblyModuleBuilderProtocol, networkService: NetworkServiceProtocol, player: AVPlayerProtocol)
+    init(navigationController: UINavigationController, assemblyBuilder: AssemblyModuleBuilderProtocol, APIManager: APIManagerProtocol, userDefaultManager: UserDefaultsManagerProtocol)
     func initialViewController()
-    func presentMusicPlauer(data: MusicData?)
-    func dismissMusicPlayer()
+    func presentSignIn()
+    func presentCreateTask()
     func popToRoot()
+    func dismiss(complition: (()->Void)?)
 }
