@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F1DF8BD296EF66700321016 /* TestFieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DF8BC296EF66700321016 /* TestFieldValidator.swift */; };
+		1F1DF8C4296EFFDB00321016 /* FieldValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1DF8C3296EFFDB00321016 /* FieldValidator.swift */; };
 		1F3121DB2955B5C1007B8BDD /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3121DA2955B5C1007B8BDD /* Util.swift */; };
+		1F54828A29939B980075EB92 /* TestLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F54828929939B980075EB92 /* TestLoginPresenter.swift */; };
 		1F6579DE295AF253008BA724 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6579DD295AF253008BA724 /* Task.swift */; };
 		1F6579E4295B1C64008BA724 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6579E3295B1C64008BA724 /* TaskCell.swift */; };
 		1F77F651296C2E5600CD5791 /* DetailTaskPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F77F650296C2E5600CD5791 /* DetailTaskPresenter.swift */; };
 		1F77F654296C2ED600CD5791 /* DetailTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F77F652296C2ED600CD5791 /* DetailTaskController.swift */; };
+		1F8714BC29928B66006DE042 /* TestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8714BB29928B66006DE042 /* TestRouter.swift */; };
+		1F8714BE2992995C006DE042 /* TestMainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8714BD2992995C006DE042 /* TestMainPresenter.swift */; };
 		1FC46D2F2955D1A300B975EC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC46D2E2955D1A300B975EC /* APIManager.swift */; };
 		1FD995C72959A15D002ABBDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FD995C62959A15D002ABBDF /* GoogleService-Info.plist */; };
 		1FD995CA2959A3E3002ABBDF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1FD995C92959A3E3002ABBDF /* FirebaseAnalytics */; };
@@ -39,12 +44,28 @@
 		1FDDDE5529559938003821EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FDDDE5329559938003821EF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		1F1DF8BE296EF66700321016 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1FDDDE3D29559934003821EF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FDDDE4429559934003821EF;
+			remoteInfo = FirebaseAuthentication;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		1F1DF8BA296EF66700321016 /* FirebaseAuthenticationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebaseAuthenticationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F1DF8BC296EF66700321016 /* TestFieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFieldValidator.swift; sourceTree = "<group>"; };
+		1F1DF8C3296EFFDB00321016 /* FieldValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldValidator.swift; sourceTree = "<group>"; };
 		1F3121DA2955B5C1007B8BDD /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		1F54828929939B980075EB92 /* TestLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginPresenter.swift; sourceTree = "<group>"; };
 		1F6579DD295AF253008BA724 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		1F6579E3295B1C64008BA724 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		1F77F650296C2E5600CD5791 /* DetailTaskPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskPresenter.swift; sourceTree = "<group>"; };
 		1F77F652296C2ED600CD5791 /* DetailTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTaskController.swift; sourceTree = "<group>"; };
+		1F8714BB29928B66006DE042 /* TestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRouter.swift; sourceTree = "<group>"; };
+		1F8714BD2992995C006DE042 /* TestMainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMainPresenter.swift; sourceTree = "<group>"; };
 		1FC46D2E2955D1A300B975EC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		1FD995C62959A15D002ABBDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FD995D82959BA2A002ABBDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +91,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1F1DF8B7296EF66700321016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FDDDE4229559934003821EF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +113,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1DF8BB296EF66700321016 /* FirebaseAuthenticationTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F1DF8BC296EF66700321016 /* TestFieldValidator.swift */,
+				1F8714BB29928B66006DE042 /* TestRouter.swift */,
+				1F8714BD2992995C006DE042 /* TestMainPresenter.swift */,
+				1F54828929939B980075EB92 /* TestLoginPresenter.swift */,
+			);
+			path = FirebaseAuthenticationTests;
+			sourceTree = "<group>";
+		};
 		1F77F64A296C083100CD5791 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +171,7 @@
 				1FC46D2E2955D1A300B975EC /* APIManager.swift */,
 				1FD995E72959D1E1002ABBDF /* UserDefaultsManager.swift */,
 				1F3121DA2955B5C1007B8BDD /* Util.swift */,
+				1F1DF8C3296EFFDB00321016 /* FieldValidator.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -149,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				1FDDDE4729559934003821EF /* FirebaseAuthentication */,
+				1F1DF8BB296EF66700321016 /* FirebaseAuthenticationTests */,
 				1FDDDE4629559934003821EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				1FDDDE4529559934003821EF /* FirebaseAuthentication.app */,
+				1F1DF8BA296EF66700321016 /* FirebaseAuthenticationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,20 +206,20 @@
 		1FDDDE4729559934003821EF /* FirebaseAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				1FDDDE4A29559934003821EF /* SceneDelegate.swift */,
+				1FD995C62959A15D002ABBDF /* GoogleService-Info.plist */,
+				1FDDDE5629559938003821EF /* Info.plist */,
 				1FDDDE4829559934003821EF /* AppDelegate.swift */,
-				1F77F64F296C2E2100CD5791 /* DetailModule */,
-				1F77F64E296C092C00CD5791 /* Service */,
-				1F77F64D296C08FD00CD5791 /* LoginModule */,
-				1F77F64C296C088900CD5791 /* MainModule */,
-				1F77F64B296C085D00CD5791 /* Assembly */,
-				1F77F64A296C083100CD5791 /* Router */,
 				1FDDDE4E29559934003821EF /* Main.storyboard */,
+				1FDDDE5329559938003821EF /* LaunchScreen.storyboard */,
+				1FDDDE4A29559934003821EF /* SceneDelegate.swift */,
 				1FD995D82959BA2A002ABBDF /* ViewController.swift */,
 				1FDDDE5129559938003821EF /* Assets.xcassets */,
-				1FDDDE5329559938003821EF /* LaunchScreen.storyboard */,
-				1FDDDE5629559938003821EF /* Info.plist */,
-				1FD995C62959A15D002ABBDF /* GoogleService-Info.plist */,
+				1F77F64B296C085D00CD5791 /* Assembly */,
+				1F77F64F296C2E2100CD5791 /* DetailModule */,
+				1F77F64D296C08FD00CD5791 /* LoginModule */,
+				1F77F64C296C088900CD5791 /* MainModule */,
+				1F77F64A296C083100CD5791 /* Router */,
+				1F77F64E296C092C00CD5791 /* Service */,
 			);
 			path = FirebaseAuthentication;
 			sourceTree = "<group>";
@@ -185,6 +227,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1F1DF8B9296EF66700321016 /* FirebaseAuthenticationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F1DF8C2296EF66700321016 /* Build configuration list for PBXNativeTarget "FirebaseAuthenticationTests" */;
+			buildPhases = (
+				1F1DF8B6296EF66700321016 /* Sources */,
+				1F1DF8B7296EF66700321016 /* Frameworks */,
+				1F1DF8B8296EF66700321016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F1DF8BF296EF66700321016 /* PBXTargetDependency */,
+			);
+			name = FirebaseAuthenticationTests;
+			productName = FirebaseAuthenticationTests;
+			productReference = 1F1DF8BA296EF66700321016 /* FirebaseAuthenticationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1FDDDE4429559934003821EF /* FirebaseAuthentication */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FDDDE5929559938003821EF /* Build configuration list for PBXNativeTarget "FirebaseAuthentication" */;
@@ -219,6 +279,10 @@
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					1F1DF8B9296EF66700321016 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 1FDDDE4429559934003821EF;
+					};
 					1FDDDE4429559934003821EF = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -241,11 +305,19 @@
 			projectRoot = "";
 			targets = (
 				1FDDDE4429559934003821EF /* FirebaseAuthentication */,
+				1F1DF8B9296EF66700321016 /* FirebaseAuthenticationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1F1DF8B8296EF66700321016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FDDDE4329559934003821EF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -263,12 +335,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1F1DF8B6296EF66700321016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F54828A29939B980075EB92 /* TestLoginPresenter.swift in Sources */,
+				1F1DF8BD296EF66700321016 /* TestFieldValidator.swift in Sources */,
+				1F8714BC29928B66006DE042 /* TestRouter.swift in Sources */,
+				1F8714BE2992995C006DE042 /* TestMainPresenter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1FDDDE4129559934003821EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1FC46D2F2955D1A300B975EC /* APIManager.swift in Sources */,
 				1FD995E82959D1E1002ABBDF /* UserDefaultsManager.swift in Sources */,
+				1F1DF8C4296EFFDB00321016 /* FieldValidator.swift in Sources */,
 				1F6579E4295B1C64008BA724 /* TaskCell.swift in Sources */,
 				1FD995F42959D2E3002ABBDF /* AssemblyModuleBuilder.swift in Sources */,
 				1FD9960D2959EFA7002ABBDF /* SignIn.swift in Sources */,
@@ -290,6 +374,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1F1DF8BF296EF66700321016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1FDDDE4429559934003821EF /* FirebaseAuthentication */;
+			targetProxy = 1F1DF8BE296EF66700321016 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		1FDDDE4E29559934003821EF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -310,6 +402,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1F1DF8C0296EF66700321016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 674W6Y4JF9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.FirebaseAuthenticationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseAuthentication.app/FirebaseAuthentication";
+			};
+			name = Debug;
+		};
+		1F1DF8C1296EF66700321016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 674W6Y4JF9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.raywenderlich.FirebaseAuthenticationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FirebaseAuthentication.app/FirebaseAuthentication";
+			};
+			name = Release;
+		};
 		1FDDDE5729559938003821EF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -487,6 +617,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1F1DF8C2296EF66700321016 /* Build configuration list for PBXNativeTarget "FirebaseAuthenticationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F1DF8C0296EF66700321016 /* Debug */,
+				1F1DF8C1296EF66700321016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1FDDDE4029559934003821EF /* Build configuration list for PBXProject "FirebaseAuthentication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

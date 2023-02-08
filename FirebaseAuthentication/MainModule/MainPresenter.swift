@@ -57,7 +57,7 @@ class MainPresenter : MainViewPresenterProtocol {
     }
     func createTask() {
         
-        let alert = UIAlertController(title: "Новая задача", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Новая заметка", message: "", preferredStyle: .alert)
         alert.addTextField { textField in
             textField.placeholder = "Введите имя"
         }

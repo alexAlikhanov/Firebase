@@ -7,31 +7,36 @@
 
 import UIKit
 protocol LoginViewProtocol: AnyObject {
-    
+    var presenter: LoginPresenterProtocol? { get set }
 }
 
-class Login: UIViewController {
+class Login: UIViewController, LoginViewProtocol {
     
-   public var presenter: LoginPresenterProtocol?
+    public var presenter: LoginPresenterProtocol?
+    private var validator = FieldValidator()
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        email.returnKeyType = .continue
+        email.keyboardType = .emailAddress
+        password.returnKeyType = .join
+        email.delegate = self
+        password.delegate = self
     }
 
     @IBAction func login(_ sender: Any) {
         
-        if email.text != "", password.text != "" {
+        guard validator.validateLoginTextFields(emailTF: email, passwordTF: password) else {
+            Util.shared.showAlert(withTitile: "Oops", massage: "Заполните пустые поля", viewController: self, complition: nil)
+            return
+        }
             let email = email.text!
             let pass = password.text!
             presenter?.logIn(withEmail: email, password: pass)
-        } else {
-            Util.shared.showAlert(withTitile: "Oops", massage: "Заполните пустые поля", viewController: self, complition: nil)
-        }
     }
     
     @IBAction func signIn(_ sender: Any) {
@@ -39,6 +44,23 @@ class Login: UIViewController {
     }
     
 }
-extension Login: LoginViewProtocol {
-    
+extension Login: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case email:
+            password.becomeFirstResponder()
+        case password:
+            password.resignFirstResponder()
+            guard validator.validateLoginTextFields(emailTF: email, passwordTF: password) else {
+                Util.shared.showAlert(withTitile: "Oops", massage: "Заполните пустые поля", viewController: self, complition: nil)
+                break
+            }
+                let email = email.text!
+                let pass = password.text!
+                presenter?.logIn(withEmail: email, password: pass)
+        default: break
+            
+        }
+        return true
+    }
 }

@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+
 class Util {
     
     static let shared = Util()

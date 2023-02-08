@@ -41,18 +41,17 @@ class Router: RouterProtocol {
     func presentSignIn() {
         if let navigationController = navigationController {
             guard let ViewController = assemblyBuilder?.createSignInModule(router: self, APIManager: APIManager) else { return }
-            
             ViewController.modalPresentationStyle = .formSheet
             navigationController.present(ViewController, animated: true)
         }
     }
     
-
     func dismiss(complition: (() -> Void)?) {
         if let navigationController = navigationController {
             navigationController.dismiss(animated: true, completion: complition)
         }
     }
+    
     func popToRoot() {
         if let navigationController = navigationController {
             navigationController.popToRootViewController(animated: true)
@@ -61,7 +60,7 @@ class Router: RouterProtocol {
     
     func presentDetailFor(task: Task) {
         if let navigationController = navigationController {
-            guard let VC = assemblyBuilder?.createDetailModule(router: self, task: task) else { return }
+            guard let VC = assemblyBuilder?.createDetailModule(router: self, APIManager: APIManager, task: task) else { return }
             VC.modalPresentationStyle = .automatic
             navigationController.pushViewController(VC, animated: true)
         }

@@ -29,8 +29,10 @@ class TaskCell: UITableViewCell {
     }
     
     public func setupCell(title: String, subtitle: String){
+       
         self.textLabel?.text = title
         self.detailTextLabel?.text = subtitle
+        
     }
 
 }

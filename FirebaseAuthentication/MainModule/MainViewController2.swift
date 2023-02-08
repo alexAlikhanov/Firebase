@@ -18,7 +18,10 @@ class MainViewController2: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Tasks"
+        self.navigationItem.title = "Заметки"
+        
+        view.backgroundColor = .white
+        
         let addButt = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonAction(sender:)))
         let editButt = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBarButtonAction(sender:)))
         self.navigationItem.rightBarButtonItems = [addButt, editButt]
@@ -35,6 +38,7 @@ class MainViewController2: UIViewController {
     
     private func createTaskTableView(){
         taskTableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height), style: .plain)
+        taskTableView.backgroundColor = UIColor(red: 28, green: 28, blue: 30, alpha: 1)
         taskTableView.register(TaskCell.self, forCellReuseIdentifier: "Cell")
         taskTableView.delegate = self
         taskTableView.dataSource = self

@@ -13,11 +13,10 @@ import FirebaseCoreInternal
 
 protocol APIManagerProtocol{
     var UID: String? { get set }
-    func configureFB() -> Firestore
     func getTasks(document: String, complition: @escaping ([Task]?) -> Void)
     func createTask(task: Task, complition: @escaping (Result<String?, Error>) -> Void)
     func createUser(userName: String, email: String, complition: @escaping () -> Void)
-    func setPost(collection: String, document: String, complition: @escaping () -> Void)
+    func updateTask(task: Task, complition: @escaping (Result<String?, Error>) -> Void)
     func login(withEmail email: String, password: String, complition: @escaping (Result<String?, Error>) -> Void)
     func signIn(withEmail email: String, password: String, userName: String, complition: @escaping (Result<String?, Error>) -> Void)
     func logOut()
@@ -30,7 +29,7 @@ class APIManager : APIManagerProtocol {
     var currentUser: AuthDataResult!
     public var UID: String?
     
-    func configureFB() -> Firestore {
+   private func configureFB() -> Firestore {
         var db: Firestore!
         let settings = FirestoreSettings.init()
         Firestore.firestore().settings = settings
@@ -57,6 +56,7 @@ class APIManager : APIManagerProtocol {
                 complition(.failure(error!))
             } else {
                 guard let result = resault else { return }
+                self.UID = result.user.uid
                 self.createUser(userName: userName, email: email) {
                         complition(.success(result.user.uid))
                     }
@@ -98,6 +98,17 @@ class APIManager : APIManagerProtocol {
         }
     }
     
+    func updateTask(task: Task, complition: @escaping (Result<String?, Error>) -> Void) {
+        let db = configureFB()
+        db.collection("Users").document(self.UID!).collection("Tasks").document(task.id).updateData(["title":task.title, "subtitle":task.subtitle, "body": task.body]) { error in
+            if error != nil {
+                complition(.failure(error!))
+            } else {
+                complition(.success(""))
+            }
+        }
+    }
+    
     func createUser(userName: String, email: String, complition: @escaping () -> Void){
         let db = configureFB()
         db.collection("Users").document(self.UID!).setData([
@@ -107,19 +118,6 @@ class APIManager : APIManagerProtocol {
             if let error = error {
                 print("error \(error.localizedDescription)")
             } else {
-                complition()
-            }
-        }
-    }
-    
-    func setPost(collection: String, document: String, complition: @escaping () -> Void){
-        let db = configureFB()
-        var ref : DocumentReference? = nil
-        ref = db.collection(collection).addDocument(data: [document : document]) { err in
-            if let err = err {
-                print("Error adding document: \(err)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
                 complition()
             }
         }
